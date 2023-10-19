@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class WhileOvertimePay22 {
     public static void main(String[]args) {
-        Scanner input = new Scanner(System.in);
+        Scanner input22 = new Scanner(System.in);
         int numEmployee;
         int overtimeHours;
         double overtimePay = 0;
@@ -9,14 +9,14 @@ public class WhileOvertimePay22 {
         String position;
 
         System.out.print("Employee number = ");
-        numEmployee = input.nextInt();
+        numEmployee = input22.nextInt();
 
         int i=0;
         while(i<numEmployee){
             System.out.print("Position of employee"+(i+1)+" (director, manager, staff) = ");
-            position = input.next();
-            System.out.print("Employee"+(i+1)+" overtime hours = ");
-            overtimeHours = input.nextInt();
+            position = input22.next();
+            System.out.print("Employee "+(i+1)+" overtime hours = ");
+            overtimeHours = input22.nextInt();
             i++;
 
             if(position.equalsIgnoreCase("director")){
@@ -25,10 +25,14 @@ public class WhileOvertimePay22 {
                 overtimePay=overtimeHours*100000;
             }else if(position.equalsIgnoreCase("staff")){
                 overtimePay=overtimeHours*75000;
-            }
+            } else {
+               System.out.println("invalid position!");
+               i--;
+               continue;
+            } 
+            
             totalOvertimePay += overtimePay;
+            System.out.println("Total of Overtime Pay = " + totalOvertimePay);
         }
-         System.out.println("Total of Overtime Pay = "+totalOvertimePay);
     }
 }
-

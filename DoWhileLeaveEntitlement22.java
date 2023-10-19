@@ -23,8 +23,10 @@ public class DoWhileLeaveEntitlement22 {
                     System.out.println("The remaining leave entitlement: " +leaveEntitlement);
                 } else {
                     System.out.println("The remaining leave entitlement is not sufficient!");
-                    break;
+                    continue;
                 }
+            } else {
+                break;
             }
         } while (leaveEntitlement > 0);
     }
